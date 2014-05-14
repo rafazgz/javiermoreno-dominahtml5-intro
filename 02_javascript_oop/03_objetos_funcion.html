@@ -7,7 +7,9 @@
 <body>
 	<script>
 		
-		var saludar = (function(nombre) {
+		
+	    /*	
+        var saludar = (function(nombre) {
 			console.log('********************');
 			console.log('Hola, ' + nombre);
 			console.log('********************');
@@ -22,8 +24,44 @@
 		
 		console.log('********************');
 		console.log(saludar);
+		*/
 		
 		
+		/*
+		Si se pasan 0 parámetros emitir
+		'Encantado de conocerte, desconocido
+		Si solo se se inidica un parámetro emitir
+		'Encantado de conocerte, Alice'
+		
+		Si pasan varios parámetros emitir
+		'Alice ha conocido a Bob, Charlid'
+		*/
+		
+		
+		var saludarMejorado = (function() {
+			switch(arguments.length) {
+            case 0:
+                console.log('Encantado de conocerte, desconocido');
+                break;
+            case 1:
+                console.log('Encantado de conocerte: ', arguments[0] );
+                break;
+            default:
+                var nombre = arguments[0];
+                var resto = '';
+                for(var i = 0; i < arguments.length; i++)
+                {
+                    resto += arguments[i];
+                    if (i != arguments.length -1)
+                        resto += ', ';
+                }
+                console.log(nombre, ' ha conocido a ', resto );
+            }
+		});
+		
+		saludarMejorado();
+		saludarMejorado('Rafa');
+		saludarMejorado('Alice', 'Bob', 'Charlid', 'Brown');
 	
 	</script>
 	

@@ -1,0 +1,71 @@
+<h1>Definir un objeto factura:</h1>
+
+    <li> nº de factura                    </li>
+    <li> fecha de emisión (como string)   </li>
+    <li> emisor ( nif, nombre, direccion) </li>
+    <li> cliente (nif, nombre, direccion) </li>
+    <li> concepto                         </li>
+    <li> base imponible                   </li>
+    <li> cuota iva                        </li>
+    <li> total a facturar                 </li>
+    
+    <script>
+        
+        var factura = {
+            'numero' : 0123456789
+        }
+        
+        var emisor =  {
+                'nif' : '72969038C',
+                'nombre' : 'Rafa',
+                'direccion' : 'Mi casa'
+            };
+        
+        var f2 = {
+            'numero' : 0123456789,
+            'fechaEmision' : '20140101',
+            'emisor' : emisor
+            };
+            
+        
+        var f3 = {
+            'numero' : 0123456789,
+            'fechaEmision' : '20140101',
+            
+            'emisor' : {
+                'nif' : '72969038C',
+                'nombre' : 'Rafa',
+                'direccion' : 'Mi casa'
+            },
+            
+            'cliente' : {
+                'nif' : '25252525C',
+                'nombre' : 'Javier',
+                'direccion' : 'La suya'
+            },
+            
+            'concepto' : 'Esta es la factura más barata del mundo',
+            'cuota iva' : 1,
+            'total a facturar' : '0€'            
+        };
+        
+        console.info('La factura número %i del cliente %s asciende a un total de %d euros',
+            f3.numero, f3.cliente.nombre, f3["total a facturar"]);
+        
+        for(var prop in factura){
+            
+            var valor = factura[prop];
+            
+            if(typeof(valor) == 'object'){
+                for(var propAnidada in valor)
+                {
+                   console.log('La propiedad %s vale %s', propAnidada, valor[propAnidada]); 
+                }
+            } else {
+                console.log('La propiedad %s vale %s', prop, valor);
+            }
+        
+        }
+    
+        
+    </script>
