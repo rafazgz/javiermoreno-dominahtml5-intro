@@ -30,13 +30,18 @@
         </style>
     </head>
     <body>        
-<div id="antes">antes</div>
-<div id="parent">
-    <span id="a">Lorem ipsum dolor sit amet.</span>
-    <span id="b">Alitorum sinilipaticum et sinomen.</span>
-    <span id="c">Aliquam viverra, nibh id commodo interdum.<span>                
-</div>
-<div id="despues">después</div>
-
+        <div id="before">antes</div>
+        <div id="parent">
+            <!--
+             El display: inline ignora el width
+             Por defecto el span tiene display: inline 
+            -->
+            <span id="a">Lorem ipsum dolor sit amet.</span>
+            <span id="b">Alitorum sinilipaticum et sinomen.</span>
+            <span id="c">Aliquam viverra, nibh id commodo interdum.<span>                
+        </div>
+        <div id="after">después</div>
     </body>
 </html>
+
+

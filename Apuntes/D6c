@@ -1,0 +1,40 @@
+h3:before, h3:after {
+    content: '\2603';
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color : #ccff32;
+    font-size : 200%;
+}
+
+p:first-letter {
+    font-size : 300%;
+    font-weight : bold;
+}
+
+p:first-line {
+    text-transform : uppercase;    
+}
+
+http://jsfiddle.net/Crv2L/
+http://jsfiddle.net/Crv2L/1/
+http://jsfiddle.net/Crv2L/2/
+
+// Unidades
+// Estas son buenas para imprimir
+mm
+cm
+in
+pt
+
+
+%
+px
+em --> Mide una M mayúscula
+rem
+
+
+VisualViewport y LayoutViewport y PixelReport
+
+Pixel Ratio

@@ -1,0 +1,30 @@
+<<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    var Foo = function Foo(){};
+    
+    Foo.prototype.x = 2;
+    
+    var fooInstance = new Foo();
+    
+    console.log(fooInstance.x);
+    
+    Foo.prototype = {x:2};
+    
+    var fooInstance2 = new Foo();
+    
+    console.log(fooInstance.x);
+    console.log(fooInstance2.x);
+    
+    // Faltan tipos abstractos
+    
+</script>
+    
+</body>
+</html>

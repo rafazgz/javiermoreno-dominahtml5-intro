@@ -1,0 +1,53 @@
+CTRL + U --> Ver el código fuente
+
+
+-- Nodo
+Un objeto cualquiera (por ejemplo que esté dentro de window.document)
+
+Node
+    childNodes
+    nodeType
+    textContent
+    
+https://developer.mozilla.org/en-US/docs/Web/API/Node
+
+
+Element --> (Es un node 'su supertipo')
+    attributes
+
+HTMLElement --> (Es un Element 'su supertipo' y por lo tanto también es Node)
+
+HTMLUListElement --> (Es un HTMLElement 'su supertipo' y por lo tanto también es HTML y por lo tanto también es Node)
+
+ProcessingInstruction --> (También es un Node)
+
+<! --> ProcessingInstruction
+
+
+Cuando escribes un punto en el medio se llama 'punto volado' --> '·'
+
+Unicode Character SnowMan
+
+Ver FileFormat.Info
+
+
+Codificación estandar de Windows: ISO-8859-1
+
+
+Eventos--> Fases de Capture y Bubbling
+
+element.addEventListener('click', function(evt) {}, 
+
+true --> true = Capture
+);
+
+
+páginas para películas
+www.imdb.com
+
+Elemento en html5 para navegar entre pantalas --> elemento nav
+
+Microformatos. Todos utilizan los de schema.org
+
+Hemos abierto una película en imdb y navegando hemos llegado hasta un h1; span;
+clas="itemprop" itemprop="name"
