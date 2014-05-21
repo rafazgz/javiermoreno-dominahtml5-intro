@@ -21,7 +21,7 @@ http://jsfiddle.net/Crv2L/
 http://jsfiddle.net/Crv2L/1/
 http://jsfiddle.net/Crv2L/2/
 
-// Unidades
+// Unidades de medida
 // Estas son buenas para imprimir
 mm
 cm
@@ -30,11 +30,13 @@ pt
 
 
 %
-px
+px --> tienen mucho peligro
 em --> Mide una M mayúscula
 rem
 
 
-VisualViewport y LayoutViewport y PixelReport
+VisualViewport y LayoutViewport 
 
-Pixel Ratio
+PixelRatio
+
+Position, diplay y flow

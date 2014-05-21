@@ -1,0 +1,21 @@
+Cuando se utiliza un import para una fuente, realmente estamos utilizando una directiva de css
+por ejemplo para @import url(http://fonts.googleapis.com/css?family=Open+Sans|Roboto:300);
+
+woff ~ truetype
+
+Si queremos evitar problemas, lo mejor es utilizar truetype
+
+
+Grunt es como Ant para Java. Pero en vez de xml ultiliza JavaScript
+
+Ha dicho que si le da tiempo la semana que viene veremos cuatro cosillas sobre Grunt
+
+La resolución de un ipad en portrait es 768px en css
+
+Si es retina divide la resolución real entre el pixel ratio y ya tienes los em
+
+Ir a media query para pillar ideas de qué reglas poner y como ponerlas
+
+ver licencia de Lync
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing

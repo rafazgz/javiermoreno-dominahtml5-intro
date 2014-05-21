@@ -1,7 +1,7 @@
 http://www.w3schools.com/cssref/css_selectors.asp
 [attribute^=value]	a[src^="https"]	Selects every <a> element whose src attribute value begins with "https"	
 
-
+selectores css y 
 Pseudoselector --> son los dos puntos :
 
 

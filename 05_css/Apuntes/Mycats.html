@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyCat.com</title>
+    <style>
+               
+			img {
+			    width: 100%;
+			}
+			
+			fieldset{
+			    max-width : 60rem;
+		    }
+			
+			img {
+				max-width : 40rem;
+				display : block;
+				margin : 0 auto;
+			}
+			
+			#contenedor {
+				align-items: center;
+			}
+			
+			.clearfix:after { 
+               content: "."; 
+               visibility: hidden; 
+               display: block; 
+               height: 0; 
+               clear: both;
+            } 
+			
+	
+		    @media screen and (min-width : 60rem) {
+		        
+		        img {
+				    float: right;
+			    }
+			    
+			    h1{
+			        float: left;
+			    }
+		    
+                fieldset{
+                    max-width: 18rem;
+                    display: inline-block;
+                    margin: 1rem;
+                    box-sizing: border-box;
+                }
+
+                #contenedor{
+                    text-align: center;
+                    border: 0px;
+                }
+		    }
+		    
+		     
+	
+	</style>
+</head>
+<body>
+<div id="header" class="clearfix">
+    <h1>Mycat.com</h1>
+    <img src="http://lorempixel.com/800/300/cats/2" alt="Gato MyCats"/>    
+</div>
+<div id="after"></div>
+
+    
+<div id="contenedor">
+    <fieldset>
+        <legend>Qué somos</legend>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, reiciendis.</p>
+    </fieldset>
+    <fieldset>
+        <legend>¿Por qué?</legend>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, reiciendis.</p>
+    </fieldset>
+    <fieldset>
+        <legend>Pricins</legend>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, reiciendis.</p>
+    </fieldset>
+</div>    
+    
+</body>
+</html>
