@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+        
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+
+
+        fieldset{
+            max-width : 60rem;
+        }
+
+        img {
+            max-width : 40rem;
+            display : block;
+            margin : 0 auto;
+        }
+
+        #contenedor {
+            align-items: center;
+        }
+
+
+
+        @media screen and (min-width : 60rem) {
+
+            img {
+                float: right;
+            }
+
+            h1{
+                float: left;
+            }
+
+            fieldset{
+                max-width: 18rem;
+                display: inline-block;
+                margin: 1rem;
+                box-sizing: border-box;
+            }
+
+            #contenedor{
+                text-align: center;
+                border: 0px;
+            }
+        }
+		    
+      
+      
+      #imgCabecero {
+          float: right;
+      }
+      
+      .clearfix:after { 
+               content: "."; 
+               visibility: hidden; 
+               display: block; 
+               height: 0; 
+               clear: both;
+            } 
+         
+     .jumbotron{
+          height: 200px;
+          padding-top: 1em;
+          font-size: 0.4em;
+          display: inherit;
+          
+      }
+      
+  </style>
+  </head>
+  <body>
+    <!--
+    jumbotron
+
+        Nobre
+        Fecha nacimiento
+        btn aceptar
+
+        hacerlo con un componente que es muy parecido a los twits. Es un tipo de lista. Algo de multimedia
+        serie de gatos registrados
+
+        y las tres cajas ==> Hacerlo con grid
+    -->
+    <div class="jumbotron">
+      <h1>Gaticos Red Social!!</h1>
+      <p>La red social definitiva para tus gaticos ;-)</p>
+      <img id="imgCabecero" src="http://lorempixel.com/400/150/cats/2" alt="Gato MyCats"/>
+    </div>
+        
+    <form role="form">
+       <div class="form-group">
+        <label for="exampleNombre">Nombre</label>
+        <input type="text" class="form-control" id="exampleNombre" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="exampleFechaNacimiento">Fecha de nacimiento</label>
+        <input type="date" class="form-control" id="exampleFechaNacimiento" placeholder="Fecha de nacimiento">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+      </div>
+     
+      <div class="checkbox">
+        <label> <input type="checkbox"> Me gustan los ratones </label>
+      </div>
+      <div class="checkbox">
+        <label> <input type="checkbox"> Me gustan las ratas </label>
+      </div>
+      <div class="checkbox">
+        <label> <input type="checkbox"> Me gusta el queso </label>
+      </div>
+      
+       <!-- Button trigger modal -->
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Añadir Gatico
+        </button>
+
+    </form>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
+      <aria->                </aria->hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Añadir gato a la red social</h4>
+          </div>
+          <div class="modal-body">
+            ¿Está usted seguro que quiere añadir el gatico?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Ni de coña</button>
+            <button type="button" class="btn btn-primary">Si, por favor</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr/>
+       
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <div class="media">
+          <a class="pull-left" href="#">
+            <img class="media-object" src="http://lorempixel.com/100/100/cats/8" alt="Gatico 1">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Gatico 1</h4>
+             <p class="help-block">Es mola un montón</p>
+          </div>
+        </div>
+      </div>
+       <div class="col-xs-6 col-md-3">
+        <div class="media">
+          <a class="pull-left" href="#">
+            <img class="media-object" src="http://lorempixel.com/100/100/cats/3" alt="Gatico 2">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Gatico 2</h4>
+             <p class="help-block">Es mola un más</p>
+          </div>
+        </div>
+      </div>
+       <div class="col-xs-6 col-md-3">
+        <div class="media">
+          <a class="pull-left" href="#">
+            <img class="media-object" src="http://lorempixel.com/100/100/cats/4" alt="Gatico 3">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Gatico 3</h4>
+             <p class="help-block">Es mola mucho más</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div id="contenedor">
+        <fieldset>
+            <legend>Qué somos</legend>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, reiciendis.</p>
+        </fieldset>
+        <fieldset>
+            <legend>¿Por qué?</legend>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, reiciendis.</p>
+        </fieldset>
+        <fieldset>
+            <legend>Pricins</legend>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, reiciendis.</p>
+        </fieldset>
+    </div> 
+    
+    
+    <!-- Esto tiene que ir al final para optimizar la "visualización" en la carga -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio facturas</title>
+</head>
+<body>
+    <script>
+    /*
+        Definir un objeto factura:
+
+            - número de factura
+            - fecha de emisión (como string)
+            - emisor (nif, nombre, dirección)
+            - cliente (nif, nombre, dirección)
+            - concepto
+            - base imponible
+            - cuota iva
+            - total a facturar
+    */    
+        
+    var factura = {
+        numero : 1,
+        // http://en.wikipedia.org/wiki/ISO_8601
+        fecha : '2014-05-13T06:32:24+00:00', 
+        emisor : {
+            nif : '12345678A',
+            nombre : 'Alice',
+            direccion : 'Wonderland 32, 23411 Looking Glass'    
+        },  
+        cliente : {
+            nif : '23434243B',
+            nombre : 'Bob',
+            direccion : 'Piña 88, 23423 Underthesea'   
+        },
+		lineas : [
+			{ referencia : '3A43A',
+			  producto: 'Piña',
+			  precioUnitario: 1.2,
+			  cantidad: 5,
+			  subtotal: 5*1.2
+			},
+			{ referencia : '822B3',
+			  producto: 'Naranjas',
+			  precioUnitario: 12,
+			  cantidad: 1.8,
+			  subtotal: 12*1.8
+			},
+		],
+        concepto : 'Alquiler de fruta.',
+        baseImponible : 27.6,
+        cuotaIva : 27.6*0.10,
+        total: 27.6 * 1.10             
+    };    
+        
+    console.info('La factura número %i del cliente %s '
+               + 'asciende a un total de %d euros.',
+               factura.numero, factura.cliente.nombre,
+               factura.total);
+               
+                           
+    // Bola extra:
+    for (var propFactura in factura) {
+         var valor = factura[propFactura];
+         if (typeof(valor) == 'object') {
+            for (var propAnidada in valor) {
+                console.log('\t%s: %s',
+                            propAnidada, valor[propAnidada]);            
+            }             
+         } else {
+             console.log('%s: %s',
+                         propFactura, valor);
+         }   
+    }    
+        
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

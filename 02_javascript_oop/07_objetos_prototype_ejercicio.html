@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo tipos: Canción</title>
+</head>
+<body>
+
+    <script>
+    /*
+        Cancion
+           titulo
+           album
+           artista
+           letra
+           formato
+           duracion
+           url
+           puntuacion
+
+           incrementarPuntuacion()
+           decrementarPuntuacion()    
+    */
+    
+    
+
+    
+    var Cancion = function(opciones) {
+        this.url = opciones.url;
+        this.titulo = opciones.titulo;
+        this.album = opciones.album; 
+        this.artista = opciones.artista;
+        this.duracion = opciones.duracion;
+        this.letra = opciones.letra;
+        this.formato = opciones.formato;
+        this.puntuacion = opciones.puntuacion || 0;
+    };
+    
+    Cancion.prototype.url = null;
+    Cancion.prototype.titulo = null;
+    Cancion.prototype.album = null;
+    Cancion.prototype.artista = null;
+    Cancion.prototype.duracion = null;
+    Cancion.prototype.letra = null;
+    Cancion.prototype.formato = null;
+    Cancion.prototype.puntuacion = null;
+    
+    Cancion.prototype.incrementarPuntuacion = function() {
+        if (this.puntuacion < 10) {
+            this.puntuacion = this.puntuacion + 1;
+        }
+    };
+    
+    Cancion.prototype.decrementarPuntuacion = function() {
+        if (this.puntuacion > 0) {
+            this.puntuacion = this.puntuacion - 1;
+        }            
+    };    
+    
+    
+    var c1 = new Cancion({
+        url : 'http://storage-new2.newjamendo.com/tracks/15538_96.mp3',
+        titulo : 'The sound of jack (edit radio)',
+        album : 'Sound of Jack',
+        artista : 'Sound of Jack',
+        duracion : 243,
+        formato : 'audio/mp3',
+        puntuacion : 8    
+    });
+    
+    c1.incrementarPuntuacion();
+    console.log('Canción: ' , c1);
+    
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

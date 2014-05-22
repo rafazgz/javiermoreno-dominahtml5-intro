@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+        
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+  .jumbotron{
+      max-height: 200px;
+      padding-top: 1em;
+      font-size: 0.4em;
+  }
+  </style>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>SmokeMe!!</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p><a class="btn btn-primary btn-lg" role="button">Versión PRO</a></p>
+    </div>
+    
+    <!-- Button trigger modal -->
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Launch demo modal
+    </button>
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" <aria->                </aria->hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Ejemplo de Grid -->
+    <section class="row">
+        <div class="col-sm-4 col-md-6">
+            Ver: http://getbootstrap.com/css/#grid
+            col-sm-4 --> 1/3 en tablet
+            col-md-6 --> 50% en pc
+            Lorem ipsum dolor sit amet, consectetur.
+        </div>
+        <div class="col-sm-8 col-md-6">
+            Ver: http://getbootstrap.com/css/#grid
+            col-sm-4 --> 2/3 en tablet
+            col-md-6 --> 50% en pc
+            Lorem ipsum dolor sit amet, consectetur.
+            Lorem ipsum dolor sit amet, consectetur.
+        </div>
+    </section>
+    
+    <!-- Esto tiene que ir al final para optimizar la "visualización" en la carga -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

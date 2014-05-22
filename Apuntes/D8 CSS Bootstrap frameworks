@@ -1,0 +1,54 @@
+http://foundation.zurb.com/ --> Probablemente el mejor
+
+http://getbootstrap.com/ --> Este es el que vamos a estudiar
+    CONTRAS
+    * Los puntos de ruptura funcionan con pixel css. Y lo ideal sería que utilizara em
+    PROS
+    * Tiene el ecosistema más grande que existe
+    * Temas --> https://wrapbootstrap.com/
+    * Galería de componentes --> http://bootsnipp.com/
+Bootstrap usa less --> lesscss.org    
+sass-lang.com
+    
+ionic está diseñado para dispositivos móviles (teléfonos) no tablets. --> dispositivos Narrow
+ionic da tipo de infraestructura programada para las transiciones
+
+
+jquery mobile --> A Javi no le mola mucho
+    También hacen http://filamentgroup.com/ y no le mola mucho
+sencha touch --> Tampoco le gusta mucho el enfoque
+
+
+CDN --> Red de centros de datos repartidos por todo el mundo
+Lo chulo es subir a una cdn tu página para tener menor latencia--> Es la clave. Estudiar este tema.
+    - Tráfico (Coste)
+    - Latencia
+    - La regla de que el navegador no puede cargar más de 4 recursos en el mismo servidor
+
+    
+Google --> Ver tema de la IP 8.8.8.8 
+
+
+administrador de librerías de javascript
+
+
+Cuando pones esto:
+ <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+Añadir esto significa dar una funcionalidad a un navegador que no tiene. Y se llama polifil
+
+html5shiv
+webshim
+
+Los script src son bloqueantes
+
+
+Para ver lo que hace el navegador. En chrome iniciamos modo porno (CTRL + MAY + N) --> Y volvemos a cargar el sitio con F12 y Network seleccionado
+
+
+Bootstrap te divide cualquier contenedor en 12 columnas

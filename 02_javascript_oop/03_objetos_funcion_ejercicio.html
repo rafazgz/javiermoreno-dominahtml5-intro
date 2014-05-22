@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio multiparámetro</title>
+</head>
+<body>
+    <script>
+        /*
+            Crear una función que...
+
+                - Si se invoca con 0 parámetros muestre un 
+                    "Encantado de verte, desconocido."
+                - Si se invoca con un parámetro ("Alice") muestre un
+                    "Encantado de verte, Alice."
+                - Si se invoca con varios parámetros 
+                  ("Alice", "Bob", "Charlie" muestre un 
+                    "Alice está encantada de ver a Bob, Charlie."
+
+        */
+        
+        var saludar = function(nombre) {
+            nombre = nombre || 'desconocido';
+            if (arguments.length < 2) {
+                console.log('Encantado de conocerte, %s.', nombre);
+            } else {
+                var mensaje = '';
+                for (var i=1; i < arguments.length; i++) {
+                    mensaje = mensaje + arguments[i];
+                    if (i == arguments.length-2 && arguments.length > 2) {
+                        mensaje = mensaje + ' y ';
+                    } else if (i != arguments.length-1) {
+                        mensaje = mensaje + ', ';
+                    }
+                }
+                console.log('Alice ha conocido a %s.', mensaje);
+            }
+        
+        };
+        
+        saludar();
+        saludar('Alice');
+        saludar('Alice', 'Bob');
+        saludar('Alice', 'Bob', 'Charlie');
+        saludar('Alice', 'Bob', 'Charlie', 'Dave');
+    </script>
+</body>
+</html>
