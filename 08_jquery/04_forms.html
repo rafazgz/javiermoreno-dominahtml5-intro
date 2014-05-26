@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- h1{Demo forms}+form(input[type=text]+button{Enviar}) -->
+    <h1>Demo forms</h1>
+    <form action="">
+        <input type="text">
+        <button>Enviar</button>
+    </form>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js">
+	</script>
+	<script>
+	    $('button').on('click', function(evt){
+	        /* La llamada anterior:
+	            $('button').on('click', function(evt){
+	            es lo mismo que hacer la llamada
+	            $('button').click(function(evt){    
+	        */
+	        
+	        /* ojo, la función $('input[type=text]') --> devuelve un ARRAY*/
+	        var textbox = $('input[type=text]').first();
+	        /* aunque la función val es muy lista y obtiene el valor del primer elemento
+	        */
+	        console.log(textbox.val());
+	        evt.preventDefault();
+	    });
+	    
+	</script>
+</body>
+</html>

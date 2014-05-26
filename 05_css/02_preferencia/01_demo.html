@@ -5,9 +5,27 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="01_demo.css">
 	<style>
-		li:nth-child(3) {
-			color : white;
+		
+        /* La referencia por id es la más preferente */
+        #primeraOpcion {
+		    background-color: green;
+		}
+		
+		.importante{
+		    background-color: white;
+		    color: red;
+		    
+		}
+		
+		/* Los pseudoselectores tienen la misma prioridad que las clases  */
+		
+		li:first-child {
+		    background-color: pink;
+		    color: white;
+		    font-size: 1.3em;
+		    border: 2px solid silver;
 		}	
+		
 	</style>
 </head>
 <body>
@@ -15,7 +33,7 @@
 	<h1>Demo</h1>
 	
 	<ul>
-		<li>Manzanas</li>
+		<li id="primeraOpcion" class="importante">Manzanas</li>
 		<li>Peras</li>
 		<li>Mandarinas</li>
 		<li style="color: pink;">Fresas</li>

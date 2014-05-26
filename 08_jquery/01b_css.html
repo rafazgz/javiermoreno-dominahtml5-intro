@@ -32,30 +32,18 @@
 	</script>
 	<script>
 		
-		// manipulación css con DOM
-		var h2Elems = document.querySelectorAll('h2:nth-of-type(odd)');
-		for (var i=0; i < h2Elems.length; i++) {
-			var elem = h2Elems[i];
-			elem.style.color = 'pink';
-		}
 		
 		// manipulación css con jQuery
 		
-		$('p') 
-		  .css('color', 'violet')
-		  .css('background-color', '#fff0f0');
-		  
-		console.log($('p').css('color'));
-		
-		$('p')
-		  .css({
-			'text-decoration' : 'underline',
-			'text-transform' : 'capitalize'
-		  });
-		  
-        $('html').attr('lang', 'es');
-		console.log($('html').attr('lang'));
-		
+		$('p, h2')
+		  .css('color', function()
+               {
+                   return '#' 
+                    + Math.floor((Math.random() * 10) + 1) + Math.floor((Math.random() * 10) + 1)
+                    + Math.floor((Math.random() * 10) + 1) + Math.floor((Math.random() * 10) + 1)
+                    + Math.floor((Math.random() * 10) + 1) + Math.floor((Math.random() * 10) + 1);
+               });
+           
 	</script>
 	
 </body>

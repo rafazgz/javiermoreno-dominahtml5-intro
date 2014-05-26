@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Demo Animaciones</title>
+</head>
+<body>
+	<h1>Demo animación</h1>
+	
+	<p>23.45€</p>
+	
+	<form>
+		<button>Púlsame</button>
+	</form>	
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js">
+	</script>
+	<script>
+		$('button').click(
+		    function(evt){
+		        var $pElem = $('p');
+		        $pElem
+		            .fadeOut(2000, function(){
+		                $(this).text('30.00€');
+		            })
+		            .fadeIn(2000);
+                .animate(
+                /* Buscar cola de animaciones */
+                
+		        /* $pElem.fadeOut('slow'); --> lento */
+		        /* $pElem.fadeOut(2000); --> 2 segundos */
+		        console.log('Iniciada animación.');
+		        
+		        
+		        
+		        evt.preventDefault();
+		    }
+		);
+		
+		
+	</script>
+
+	
+</body>
+</html>
+
+
+
+
+
