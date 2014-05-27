@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YQL Demo</title>
+</head>
+<body>
+    <h1>Demo Webservices</h1>
+    <button>Púlsame</button>
+    <ol id="respuesta"></ol>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        var URL = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20query%3D%22sushi%22%20and%20location%3D%22san%20francisco%2C%20ca%22&format=json';    
+        
+        // Si usas JSONP no se ejecuta el ajaxStart y el ajaxStop. Por lo tanto hay que lanzarlos a mano    
+        var cargarDatos = function() {
+            $(document).trigger('ajaxStart');
+            $.getJSON(URL)
+             .done(function(datos) {
+                 var restaurantes = datos.query.results.Result;
+                 $(restaurantes).each(function(idx, restaurante) {
+                     $('<li>').text(restaurante.Title).appendTo('ol');
+                 });
+             }).always(function() {
+                 $(document).trigger('ajaxStop');
+             });        
+        }
+        
+        $(document).ready(function() {
+            $('button').click(function(evt) {
+                cargarDatos();            
+            });
+        });
+        
+    </script>
+</body>
+</html>

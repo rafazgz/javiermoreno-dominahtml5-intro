@@ -14,16 +14,33 @@
 	</script>
 	<script>
 		var guardarNuevaTarea = function(tarea) {
-			var url = 'http://localhost/tareas.json';
+			var url = 'tareas.json';
 			var deferred = $.post(url, {
 				'data' : JSON.stringify(tarea) 
 			});
+			
+			/*
+			    Un deferred (es un objeto que tiene el comportamiento de una promise y un comportamietno extra)
+			    es la respuesta que contiene el objeto promise
+			    Con deferred, además tienes un montón de opciones. Por ejemplo cancelar la petición actual.
+			    
+			    promise --> 3 listas de funciones (arrays de id)
+			        Y son:
+			            * Done
+                        * fail
+                        * always
+                    Tu puedes agregar funciones a estas listas
+                    
+                    Al final cuando haya terminado ejecutará :
+                        1.- Si ha ido bien (Todas las funciones de done) o si ha ido mal (todas las funciones de fail)
+                        2.- En cualquier caso todas las funciones de always
+			*/
 			return deferred;
 		};
 	
 	
 		var obtenerTareasDesdeServidor = function() {
-			var url = 'http://localhost/tareas.json';
+			var url = 'tareas.json';
 			var deferred = $.getJSON(url);	
 			deferred.done(function(tareas) {
 				console.log('Primer done', tareas);
@@ -59,8 +76,16 @@
 			
 		
 		};
+						
 		
 		$(document).ready(function(evt) {
+			
+			window.alert = function(mensaje){
+			    $('body').append(
+			        $('<p>').text(mensaje)
+			    );
+			};
+			
 			inicializar();
 		});
 		

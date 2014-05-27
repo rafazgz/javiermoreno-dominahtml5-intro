@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            margin: 0 2em;
+        }
+        
+        .jumbotron {
+             padding-top : 1px;
+        }
+        
+        .form-group {
+            text-align: left;
+        }
+        
+        #mensajes {    
+            display : none;
+        }
+        
+        #ficha {
+            display : none;
+        }
+        
+        #ficha img {
+            width : 90%;
+        }
+                                
+        #precio {
+            text-align: center;
+            font-size: 6em;
+        }
+        
+        #loading {
+            position : absolute;
+            bottom : 0px;
+            right : 0px;
+            font-size : 2em;
+            display : none;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Buy your bike!</h1>
+      <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, voluptate reiciendis dicta qui cum quia deserunt nostrum aperiam quae inventore.</p>
+      <p><a class="btn btn-primary btn-lg" role="button">Comprar versión Pro</a></p>
+    </div>
+
+    <div id="mensajes" class="alert alert-warning alert-dismissable">
+            Texto informativo.
+    </div>
+            
+    <form id="formulario" class="row">
+
+    <fieldset>
+    <!-- Form Name -->
+    <legend>Introduce tus medidas</legend>
+
+    <!-- Text input-->
+    <div class="form-group col-md-4">
+      <label class="col-md-3 control-label" for="pierna">Pierna:</label>  
+      <div class="col-md-9">
+      <input id="pierna" name="pierna" placeholder="Longitud de la pierna" class="form-control input-md" required="" type="text">
+      <span class="help-block">Introduce la medida de tu pierna desde cadera a talón en centímetros.</span>  
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group col-md-4">
+      <label class="col-md-3 control-label" for="antebrazo">Antebrazo:</label>  
+      <div class="col-md-9">
+      <input id="antebrazo" name="antebrazo" placeholder="Longitud del antebrazo" class="form-control input-md" required="" type="text">
+      <span class="help-block">Introduce la medida de tu antebrazo desde el codo a la punta de tus dedos.</span>  
+      </div>
+    </div>
+
+    <!-- Multiple Radios (inline) -->
+    <div class="form-group col-md-2">
+      <label class="control-label" for="sexo">Sexo:</label>
+      <div> 
+        <label class="radio-inline" for="sexo-0">
+          <input name="sexo" id="sexo-0" value="1" checked="checked" type="radio">
+          Hombre
+        </label> 
+        <label class="radio-inline" for="sexo-1">
+          <input name="sexo" id="sexo-1" value="2" type="radio">
+          Mujer
+        </label>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group col-md-2">
+      <label class="col-md-4 control-label" for="accionProcesar"></label>
+      <div class="col-md-4">
+        <button id="accionProcesar" name="accionProcesar" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+
+    </fieldset>
+    </form>
+
+    <section id="ficha" class="row">
+        <article class="col-sm-6 col-md-4">
+            <table class="table table-striped table-responsive">                
+            </table>
+        </article>
+        <article id="precio" class="col-sm-3 col-md-4">
+            <h3>Precio</h3>
+            <p><span></span>€</p>
+        </article>       
+        <article class="col-sm-3 col-md-4">
+            <img src="" alt="modelo bicicleta">
+        </article>
+    </section>
+        
+    <div id="loading">Cargando</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> 
+    
+    <script src="libreria.js"></script>
+    
+</body>
+  
+ 
+
+
+
+
+
+
+
+
