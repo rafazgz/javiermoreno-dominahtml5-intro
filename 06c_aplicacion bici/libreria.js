@@ -17,13 +17,10 @@ var FormularioCtrl = function() {
     this._$pierna = $('#pierna').val();
     
     $('form').submit(function(evt) {
-        
-        
         //...
         // Aquí en teoría un elemento tiene que desaparecer y tiene que aparecer el otro
         self.actualizarPantalla();
-        
-        
+                
         evt.preventDefault();
     });
     
@@ -34,15 +31,37 @@ FormularioCtrl.prototype.actualizarPantalla = function() {
     var serv = new CalculadoraBiometricaServ();
     
     // aquí se necesita el valor del antebrazo -> this.$antebrazo.val()
-    var antebrazo = this._$antebrazo.val();
-    var pierna = this._$pierna.val();
+    var antebrazo = $('#antebrazo').val();
+    var pierna = $('#pierna').val();
     var promesa = serv.obtModeloBiciAsync(antebrazo, pierna);
-    promesa.done(function(){ promesa();});
+    
+    promesa.done(function(bici)
+    {
+        //form fadeOut
+        console.log('Promesa Done');
+        console.log('Modelo: ' + bici.modelo);
+        
+        $('#formulario').fadeOut(300, function() {
+				$('#ficha').fadeIn(300);
+                $('#precio p span').text(bici.precio);
+                $('#modelo img').attr('src', bici.imagen);
+                console.log('Marca: ' + bici.marca); 
+        
+			});
+        
+    });
     
     promesa.fail(function(error)
-                { 
-                     $('#mensajes').text = error;
-                });
+    { 
+         $('#mensajes').text = error;
+    });
+    
+    promesa.always(function()
+    {
+        console.log('Promesa Always');
+    });
+    
+    return promesa;
 };  
 
 
@@ -51,7 +70,6 @@ $(document).ready(function() {
     var ctrl = new FormularioCtrl();
         
     
-    //$('#accionProcesar').addEventListener('click', new FormularioCtrl()); 
     
     
 });
