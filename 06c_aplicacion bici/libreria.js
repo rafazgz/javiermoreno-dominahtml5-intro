@@ -3,7 +3,7 @@ var CalculadoraBiometricaServ = function() {
 };
 
 CalculadoraBiometricaServ.prototype.obtModeloBiciAsync = function(antebrazo, pierna) {
-    var url = 'bicicleta.json';
+    var url = Math.floor((Math.random() * 10)) > 5 ? 'url error' : 'bicicleta.json';
     var promesa = $.getJSON(url, { a : antebrazo, p : pierna });
     return promesa;
 };
@@ -31,20 +31,31 @@ FormularioCtrl.prototype.actualizarPantalla = function() {
     var serv = new CalculadoraBiometricaServ();
     
     // aquí se necesita el valor del antebrazo -> this.$antebrazo.val()
-    var antebrazo = $('#antebrazo').val();
-    var pierna = $('#pierna').val();
+    //var antebrazo = $('#antebrazo').val();
+    //var pierna = $('#pierna').val();
+    
+    var antebrazo = this._$antebrazo;
+    var pierna =this._$pierna;
     var promesa = serv.obtModeloBiciAsync(antebrazo, pierna);
     
     promesa.done(function(bici)
     {
-        //form fadeOut
-        console.log('Promesa Done');
-        console.log('Modelo: ' + bici.modelo);
+        $('#mensajes').fadeOut();
         
-        $('#formulario').fadeOut(300, function() {
+        $('#formulario').fadeOut(300, function() {        
 				$('#ficha').fadeIn(300);
                 $('#precio p span').text(bici.precio);
                 $('#modelo img').attr('src', bici.imagen);
+            
+                jQuery.each(bici, function(index, value) {
+                         $('<tr>')
+                            .append($('<td>').text(index))
+                            .append($('<td>').text(value))
+                            .appendTo('table');
+            
+                 //$("table_div").append("<tr><td>" + index  + "</td><td>" + value + "</td></tr>");
+                 });
+            
                 console.log('Marca: ' + bici.marca); 
         
 			});
@@ -53,7 +64,8 @@ FormularioCtrl.prototype.actualizarPantalla = function() {
     
     promesa.fail(function(error)
     { 
-         $('#mensajes').text = error;
+        $('#mensajes').fadeIn();
+        $('#mensajes').text(error.responseText);     
     });
     
     promesa.always(function()
