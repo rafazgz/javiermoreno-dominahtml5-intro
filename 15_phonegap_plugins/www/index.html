@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <h1>Demo plugins</h1>
+        <form>
+            <button>Púlsame:</button>
+        </form>
+        
+        <!--  Escte script lo añadirá en tiempo de compilación el phonegap. Así
+                que no te preocupes
+          -->
+        <script type="text/javascript" src="phonegap.js"></script>
+        
+        <script>
+            document.addEventListener("deviceready", function(){
+                   var boton = document.querySelector('button');
+                   boton.addEventListener('click', function(evt)
+                   {
+                        evt.preventDefault();
+                        navigator.notification.alert('Vamos Rafa!');
+                   });
+            });
+    
+        </script>
+    </body>
+</html>
