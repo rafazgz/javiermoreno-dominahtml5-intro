@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-2.1.1.js"></script>
+    <script src="jquery.corner.js"></script>
+    <script>
+        window.onerror = tratarError;
+
+        var backgroundDiv;
+        var divCuerpo;
+        var updateProgressDiv;
+
+        $(document).on('ready', function () {
+            //  posicionamos la capa durante el postback
+            backgroundDiv = $('<div>', { id: 'bgd', className: 'background' })
+                .css({
+                    zIndex: 100,
+                    display: '',
+                    width: $(window).width() + 'px',
+                    height: $(window).height() + 'px',
+                    color: 'blue'                    
+                })
+                .wrap('<div class="outer"></div>')
+                .appendTo($(document.body));
+
+            //backgroundDiv = document.createElement('div');
+            //backgroundDiv.id = 'bgd';
+
+            divCuerpo = $('#contenedor');
+
+            // The ends of the layer and the component
+            updateProgressDiv = $('#updateProgressDiv');
+            
+            $('#btnMostrar').click(MostrarDialogoEspere);
+            $('#btnOcultar').click(OcultarDialogoEspere);
+
+        });
+
+
+
+        function tratarError(mensaje) {
+            console.log('Error: ' + mensaje);
+            return true;
+        }
+
+        function MostrarDialogoEspere() {
+            if (divCuerpo.length > 0) {
+                divCuerpo.prop("disabled", true);
+                divCuerpo.append(backgroundDiv);
+                divCuerpo.css('zIndex', 1);
+            
+            }
+
+            updateProgressDiv.css({
+                position: 'absolute',
+                left: ($(window).width() - updateProgressDiv.outerWidth()) / 2,
+                top: ($(window).height() - updateProgressDiv.outerHeight()) / 2,
+                zIndex: 200
+            });
+
+
+            updateProgressDiv.corner();
+
+            updateProgressDiv.show();
+        }
+
+
+        function OcultarDialogoEspere() {
+            if (divCuerpo.length > 0) {
+                divCuerpo.prop("disabled", false);
+                backgroundDiv.css('display', 'none');
+            }
+
+            updateProgressDiv.hide();
+        }
+    </script>
+    <style>
+        .updateProgress
+        {
+            border-width: 1px;
+            border-style: solid;
+            background-color: #ffffff;
+            position: absolute;
+            width: 350px;
+            height: 100px;
+        }
+                
+    </style>
+</head>
+<body>    <div id="updateProgressDiv" class="updateProgress" style="display: none">
+        <div align="center" style="margin-top: 13px;">
+            <img alt="Simple" src="img/simple.gif" />
+            <span style="font-family: Trebuchet MS"><span style="font-size: small">Cargando<span
+                class="updateProgressMessage"> ...</span></span></span>
+        </div>
+    </div>
+    <div id="contenedor">
+         <input type="button" value="Mostrar" id="btnMostrar">
+        <input type="button" value="Ocultar" id="btnOcultar">
+    </div>
+</body>
+</html>

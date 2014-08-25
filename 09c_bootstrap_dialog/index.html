@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+        
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    
+    <link rel="stylesheet" href="bootstrap-dialog.min.css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+      <!-- Esto tiene que ir al final para optimizar la "visualización" en la carga -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap.min.js"></script>
+    <script src="bootstrap-dialog.min.js"></script>
+      
+      <script>
+          function MostrarInfo(title, message) {
+                BootstrapDialog.show({
+                    type: BootstrapDialog.TYPE_INFO,
+                    title: title,
+                    message: message,
+                    buttons: [
+                        {
+                            label: 'Cerrar',
+                            action: function (dialogItself) {
+                                dialogItself.close();
+                            }
+                        }]
+                });
+            }
+
+            function MostrarExcepcion(title, message) {
+                BootstrapDialog.show({
+                    type: BootstrapDialog.TYPE_DANGER,
+                    title: title,
+                    message: message,
+                    buttons: [
+                        {
+                            label: 'Cerrar',
+                            action: function (dialogItself) {
+                                dialogItself.close();
+                            }
+                        }]
+                });
+            }
+            
+            function showPleaseWait()
+            { 
+                $('#pleaseWaitDialog').modal();
+            }
+            
+            function hidePleaseWait()
+            { 
+                $('#pleaseWaitDialog').modal('hide');
+            }
+                    
+                    
+      </script>
+  </head>
+  <body>
+   
+   <div class="modal" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-header">
+            <h1>Processing...</h1>
+        </div>
+        <div class="modal-body">
+            <div class="progress progress-striped active">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+   
+   <input type="button" id="btnAceptar" onclick="MostrarInfo('Titulo', 'Mensaje de info');" value="Mostrar info">
+   <input type="button" id="btnAceptar" onclick="MostrarExcepcion('Titulo', 'Detalle error');" value="Mostrar error">
+   <input type="button" id="btnAceptar" onclick="showPleaseWait();" value="Please wait!!">
+   
+    
+    
+    
+  </body>
+</html>
